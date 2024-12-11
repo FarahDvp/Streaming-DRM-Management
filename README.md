@@ -47,7 +47,7 @@ This app is ideal for video streaming services looking to protect their content 
 </a>
 
 <a href="https://grafana.com/" target="_blank">
-  <img src="https://img.shields.io/badge/Grafana-11.0.0-red" alt="Grafana Version" />
+  <img src="https://img.shields.io/badge/Grafana-11.0.0-yellow" alt="Grafana Version" />
 </a>
 
 <a href="https://www.rabbitmq.com/" target="_blank">
