@@ -1,0 +1,14 @@
+li {
+    margin-left: 15px;
+}
+
+.status-indicator {
+    background-color: #eaecf4;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 100%;
+    position: absolute;
+    right: 5%;
+    margin-top: -9%;
+    border: 0.125rem solid #fff;
+}

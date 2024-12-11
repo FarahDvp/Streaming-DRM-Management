@@ -1,0 +1,36 @@
+.blocked-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #ede0f6c5;
+}
+
+.blocked-user-message {
+    text-align: center;
+    max-width: 900px;
+}
+
+.blocked-user-message i {
+    font-size: 80px;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+.blocked-user-message h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.blocked-user-message p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.blocked-user-message a {
+    display: block;
+    font-size: 18px;
+    color: #0c4f97;
+    text-decoration: underline;
+    margin-top: 20px;
+}

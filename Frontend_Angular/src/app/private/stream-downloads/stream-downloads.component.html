@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Downloaded Videos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+
+                <form action="#" method="post">
+
+                    <div *ngIf="videosList.length === 0"
+                        class="alert alert-warning d-flex justify-content-center align-items-center vh-100">
+                        <div>
+                            <span>No downloaded video found.</span>
+                        </div>
+                    </div>
+
+                    <div *ngIf="videosList && videosList.length > 0">
+
+                        <div class="controls">
+                            <h4 style="margin-bottom: 30px;font-style: italic;"><i style="margin-right: 20px;"
+                                    class="fas fa-list text-warning"></i>Downloaded videos <a href="#"
+                                    data-toggle="modal" data-target="#deleteAllModal"><button
+                                        style="float: right; margin-top: -10px;" class="btn btn-grey btn-x">
+                                        <i style="margin-right: 15px;" class="fas fa-trash"></i>Clear all
+                                        downloads</button></a>
+                            </h4>
+
+                            <div class="form-grid">
+
+                                <div *ngFor="let video of videosList; let i = index" class="col-md-3.9 video-card">
+                                    <div>
+                                        <video class="video-js" controls crossorigin playsinline>
+                                            <source [src]="video.downloadUrl" type="video/mp4">
+
+                                            <!-- Fichiers de sous-titres -->
+                                            <track kind="captions" label="English" srclang="en"
+                                                src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
+                                                default>
+                                            <track kind="captions" label="Français" srclang="fr"
+                                                src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+                                        </video>
+                                    </div>
+                                    <h6 class="title-card"><span class="video-name">{{ video.name }}</span><a href="#"
+                                            data-toggle="modal" data-target="#deleteModal" (click)="deleteRow($event)">
+                                            <button class="btn btn-x" *ngIf="video" [attr.data-id]="video.id">
+                                                Delete</button>
+                                        </a></h6>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li *ngFor="let pg of taillePagination"
+                                        [ngClass]="{'page-item': true, 'active': pg === activePage}">
+                                        <a class="page-link" (click)="changePage(pg)">{{ pg + 1 }}</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </form>
+
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                    style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                <h2 class="swal2-title" id="swal2-title"
+                                    style="margin-top:20px ; text-align: center;color: black;">
+                                    Are you sure ?</h2>
+                                <div id="swal2-content" style="display: block;color: black;">
+                                    This downloaded video will be deleted from downloads.</div>
+                                <br>
+
+                                <a id="closeModalButton" data-toggle="modal" data-target="#deleteModal"
+                                    class="btn btn-info" data-dismiss="modal">Cancel</a>
+                                <a class="btn btn-success" (click)="delete()">Approve </a><br><br>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                    style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                <h2 class="swal2-title" id="swal2-title"
+                                    style="margin-top:20px ; text-align: center;color: black;">
+                                    Are you sure ?</h2>
+                                <div id="swal2-content" style="display: block;color: black;">
+                                    All downloads will be deleted.</div>
+                                <br>
+
+                                <a id="closeModal1Button" data-toggle="modal" data-target="#deleteAllModal"
+                                    class="btn btn-info" data-dismiss="modal">Cancel</a>
+                                <a class="btn btn-success" (click)="clearAllDownloads()">Approve </a><br><br>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

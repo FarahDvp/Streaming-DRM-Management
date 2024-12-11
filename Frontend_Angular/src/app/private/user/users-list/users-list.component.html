@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <app-sidebar></app-sidebar>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Users List</h1>
+                </div>
+
+                <div class="row">
+                    <div class="container">
+                        <form action="#" method="post" class="form-grid">
+
+
+
+                            <button style="float: right; margin-bottom: 20px;" class="btn btn-success" type="submit"
+                                routerLink="/users/add"><i style="margin-right: 15px;" class="fa fa-plus"></i> Add
+                                user</button>
+
+
+                            <div style="margin: 10px 10px;">
+                                <input type="text" class="form-control" placeholder="  Search ...">
+                            </div>
+
+
+                            <ul style="margin-left:10px; margin-right:10px; font-weight: 400;" class="nav-tabs nav"
+                                role="tablist">
+                                <li class="nav-item">
+                                    <a routerLink="/users/list" class="nav-link" role="tab"
+                                        [class.active]="premierOngletActif" (click)="activerPremierOnglet()"
+                                        [style.color]="premierOngletActif ? 'rgb(97, 148, 230)' : 'gray'">
+                                        <i class="fas fa-user" style="margin-right: 15px;"></i> Users
+                                        ({{usersList.length}})
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a routerLink="/users/blocked" class="nav-link" role="tab"
+                                        [class.active]="deuxiemeOngletActif" (click)="activerDeuxiemeOnglet()"
+                                        [style.color]="deuxiemeOngletActif ? 'rgb(97, 148, 230)' : 'gray'">
+                                        <i class="fas fa-user-minus" style="margin-right: 15px;"></i> Blocked Users
+                                        ({{blockedUsersList.length}})
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="row" style="margin-left:5px; margin-right:5px">
+                                <div class="col">
+                                    <div *ngIf="premierOngletActif && usersList.length === 0"
+                                        class="alert alert-warning">No user found</div>
+                                    <div *ngIf="deuxiemeOngletActif && blockedUsersList.length === 0"
+                                        class="alert alert-warning">No blocked user found</div>
+
+                                    <table *ngIf="premierOngletActif && usersList.length > 0" class="table table-sm">
+                                        <thead style="color: #0e5355bd;">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Username</th>
+                                                <th>Fullname</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Date of creation</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let user of usersList">
+                                                <td>{{user.uid}}</td>
+                                                <td>{{user.username}}</td>
+                                                <td>{{user.fullname}}</td>
+                                                <td>{{user.email}}</td>
+                                                <td>{{user.phone}}</td>
+                                                <td>{{user.creationDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>
+                                                    <div class="row no-gutters">
+                                                        <div class="col">
+                                                            <button [routerLink]="['/user-details', user.uid]"
+                                                                class="btn btn-xs btn-warning">
+                                                                <i class="fa fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col">
+                                                            <button [routerLink]="['/users/update', user.uid]"
+                                                                class="btn btn-xs btn-info">
+                                                                <i class="fa fa-pen"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" data-toggle="modal" data-target="#deleteModal"
+                                                                (click)="deleteRow($event)">
+                                                                <button class="btn btn-xs btn-danger" *ngIf="user"
+                                                                    [attr.data-uid]="user.uid">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" data-toggle="modal" data-target="#blockModal"
+                                                                (click)="blockRow($event)">
+                                                                <button class="btn btn-xs btn-grey" *ngIf="user"
+                                                                    [attr.data-id]="user.uid">
+                                                                    <i class="fas fa-user-minus"></i>
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <table *ngIf="deuxiemeOngletActif && blockedUsersList.length > 0"
+                                        class="table table-sm">
+                                        <thead style="color: #0e5355bd;">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Username</th>
+                                                <th>Fullname</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Date of creation</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let user of blockedUsersList">
+                                                <td>{{user.uid}}</td>
+                                                <td>{{user.username}}</td>
+                                                <td>{{user.fullname}}</td>
+                                                <td>{{user.email}}</td>
+                                                <td>{{user.phone}}</td>
+                                                <td>{{user.creationDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>
+                                                    <div class="row no-gutters">
+                                                        <div class="col">
+                                                            <a href="#" data-toggle="modal" data-target="#deleteModal"
+                                                                (click)="deleteRow($event)">
+                                                                <button class="btn btn-xs btn-danger" *ngIf="user"
+                                                                    [attr.data-uid]="user.uid">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" data-toggle="modal" data-target="#unblockModal"
+                                                                (click)="unblockRow($event)">
+                                                                <button class="btn btn-xs btn-grey" *ngIf="user"
+                                                                    [attr.data-idi]="user.uid">
+                                                                    <i class="fas fa-user-plus"></i>
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <nav style="margin-left: 10px;" aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li *ngFor="let pg of taillePagination"
+                                        [ngClass]="{'page-item': true, 'active': pg === activePage}">
+                                        <a class="page-link" (click)="changePage(pg)">{{ pg + 1 }}</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </form>
+
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                            style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                        <h2 class="swal2-title" id="swal2-title"
+                                            style="margin-top:20px ; text-align: center;color: black;">
+                                            Are you sure ?</h2>
+                                        <div id="swal2-content" style="display: block;color: black;">
+                                            This user will be deleted.</div>
+                                        <br>
+
+                                        <a id="closeModalButton" data-toggle="modal" data-target="#deleteModal"
+                                            class="btn btn-info" data-dismiss="modal">Cancel</a>
+                                        <a class="btn btn-success" (click)="delete()">Approve </a><br><br>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="blockModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                            style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                        <h2 class="swal2-title" id="swal2-title"
+                                            style="margin-top:20px ; text-align: center;color: black;">
+                                            Are you sure ?</h2>
+                                        <div id="swal2-content" style="display: block;color: black;">
+                                            This user will be blocked.</div>
+                                        <br>
+
+                                        <a id="closeModalButton2" data-toggle="modal" data-target="#blockModal"
+                                            class="btn btn-info" data-dismiss="modal">Cancel</a>
+                                        <a class="btn btn-success" (click)="block()">Approve </a><br><br>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="unblockModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                    <div class="text-center p-2 ng-star-inserted"><i class="fas fa-exclamation-circle"
+                                            style="font-size: 80px;margin-top: 19px; color: red !important"></i>
+                                        <h2 class="swal2-title" id="swal2-title"
+                                            style="margin-top:20px ; text-align: center;color: black;">
+                                            Are you sure ?</h2>
+                                        <div id="swal2-content" style="display: block;color: black;">
+                                            This user will be unblocked.</div>
+                                        <br>
+
+                                        <a id="closeModalButton3" data-toggle="modal" data-target="#unblockModal"
+                                            class="btn btn-info" data-dismiss="modal">Cancel</a>
+                                        <a class="btn btn-success" (click)="unblock()">Approve </a><br><br>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

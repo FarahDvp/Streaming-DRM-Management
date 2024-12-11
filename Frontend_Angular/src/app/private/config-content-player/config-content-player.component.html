@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Player</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <app-sidebar></app-sidebar>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Player</h1>
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+                    <div class="container">
+
+
+                        <form action="#" method="post" class="form-grid">
+                            <div class="left-column">
+                                <h5><label for="primaryColor">Primary Player Color</label></h5>
+                                <p>Select the primary color that will be displayed for the controls in the video player.
+                                </p>
+                                <input type="color" id="primaryColor" name="primaryColor" value="#000000">
+
+                                <h5><label for="uiLanguage">UI Language</label></h5>
+                                <p>Select the UI language that will be displayed in the video player.</p>
+                                <select id="uiLanguage" name="uiLanguage">
+                                    <option value="english">English</option>
+                                    <option value="french">French</option>
+                                    <option value="english">Arabic</option>
+                                    <option value="spanish">Spanish</option>
+                                </select>
+
+                                <h5><label for="fontFamily">Font Family</label></h5>
+                                <p>The font family that will be used within the player.</p>
+                                <input type="text" id="fontFamily" name="fontFamily">
+                            </div>
+
+                            <div class="right-column">
+                                <h4>Captions Appearance</h4>
+                                <label for="fontSize">Font Size:</label>
+                                <input type="number" id="fontSize" name="fontSize" min="10" max="30" step="1">
+
+                                <label for="fontColor">Font Color:</label>
+                                <input type="color" id="fontColor" name="fontColor" value="#ffffff">
+
+                                <label for="backgroundColor">Background Color:</label>
+                                <input type="color" id="backgroundColor" name="backgroundColor" value="#000000">
+                            </div>
+
+                            <div class="controls">
+                                <h4>Player Controls</h4>
+                                <p style="margin-top: 10px;">Select the UI controls that will be displayed on the
+                                    player.</p>
+
+                                <div class="cont">
+
+                                    <div class="blocks">
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-play"></i>
+                                                Play/Pause
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle text-success"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-volume-up"></i>
+                                                Volume
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle  text-success"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-expand"></i>
+                                                Fullscreen
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle  text-success"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-closed-captioning"></i>
+                                                Captions
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="blocks">
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-play-circle"></i>
+                                                Big Play Button
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-volume-mute"></i>
+                                                Mute
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle  text-success"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-cog"></i>
+                                                Settings
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="blocks">
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-bolt"></i>
+                                                Current Time
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-backward"></i>
+                                                10s Backward
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                        <div class="control-option">
+                                            <div style="width: 200px;" class="input-group-text">
+                                                <i style="margin-right: 20px;" class="fas fa-spinner"></i>
+                                                Progress
+                                            </div>
+                                            <div style="height: 37px;" class="input-group-text"><i
+                                                    class="fas fa-check-circle"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="btn btn-success">Save</button>
+
+                        </form>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

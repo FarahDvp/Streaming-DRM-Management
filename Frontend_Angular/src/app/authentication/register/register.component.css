@@ -1,0 +1,104 @@
+.pp {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+h6 {
+    color: aqua;
+    margin-top: -10px;
+}
+
+.fai,
+.fais,
+.faiss,
+.faisss {
+    display: block;
+}
+
+span {
+    margin-left: 120px;
+    color: #000;
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(to bottom, rgb(129, 84, 170), grey);
+}
+
+.main {
+    width: 450px;
+    height: 590px;
+    overflow: hidden;
+    background: url("/assets/img/bg5.png") no-repeat center / cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+label {
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    /* width:60%; */
+    height: 44px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    /* margin:20px auto; */
+    margin: 7px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 115%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: rgb(41, 192, 182);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 5%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(30, 143, 135);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
+}

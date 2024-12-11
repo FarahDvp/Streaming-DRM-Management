@@ -1,0 +1,124 @@
+<body>
+
+    <div class="main">
+
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+
+            <form [formGroup]="formService.formGroupAddMem" class="user">
+                <label>Register</label>
+
+                <h6>STEP 1 OF 2</h6>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input formControlName="usernameMem" class="form-control"
+                                [ngClass]="{ 'is-invalid': (formService.usernameMem?.errors) ?? false && formService.usernameMem?.touched }"
+                                id="exampleUsername" type="text" size="23" class="fai" placeholder="Username"
+                                required />
+                        </div>
+
+                        <div class="pp">
+                            <input formControlName="nameMem" class="form-control"
+                                [ngClass]="{ 'is-invalid': (formService.nameMem?.errors) ?? false && formService.nameMem?.touched }"
+                                id="exampleFullname" type="text" size="23" class="fais" placeholder="Fullname"
+                                required />
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="formService.usernameMem?.errors">
+                            <div *ngIf="formService.usernameMem?.errors?.['minlength']">
+                                The username must be at least {{
+                                formService.usernameMem?.errors?.['minlength'].requiredLength }} characters long.
+                            </div>
+                            <div *ngIf="formService.usernameMem?.errors?.['maxlength']">
+                                The username cannot exceed {{
+                                formService.usernameMem?.errors?.['maxlength'].requiredLength }} characters.
+                            </div>
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="formService.nameMem?.errors">
+                            <div *ngIf="formService.nameMem?.errors?.['minlength']">
+                                The Name must be at least {{ formService.nameMem?.errors?.['minlength'].requiredLength
+                                }}
+                                characters long*
+                            </div>
+                            <div *ngIf="formService.nameMem?.errors?.['maxlength']">
+                                The Name cannot exceed {{ formService.nameMem?.errors?.['maxlength'].requiredLength }}
+                                characters*
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input formControlName="emailMem" class="form-control" id="exampleEmail" type="email"
+                                size="53" placeholder="Email" required />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input formControlName="passwordMem" class="form-control"
+                                [ngClass]="{ 'is-invalid': (formService.passwordMem?.errors) ?? false && formService.passwordMem?.touched }"
+                                id="examplePassword" type="password" size="53" class="fai" placeholder="Password"
+                                required />
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="formService.passwordMem?.errors">
+                            <div *ngIf="formService.passwordMem?.errors?.['minlength']">
+                                The password must be at least {{
+                                formService.passwordMem?.errors?.['minlength'].requiredLength }} characters long*
+                            </div>
+                            <div *ngIf="formService.passwordMem?.errors?.['maxlength']">
+                                The password cannot exceed {{
+                                formService.passwordMem?.errors?.['maxlength'].requiredLength }} characters*
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+
+                        <div class="pp">
+                            <input formControlName="phoneMem" class="form-control"
+                                [ngClass]="{ 'is-invalid': (formService.phoneMem?.errors) ?? false && formService.phoneMem?.touched }"
+                                id="examplePhone" type="number" style="width: 390px;" class="fais" placeholder="Phone"
+                                required />
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="formService.phoneMem?.errors">
+                            <div *ngIf="formService.phoneMem?.errors?.['minlength']">
+                                The phone number must be at least 8 numbers*
+                            </div>
+                            <div *ngIf="formService.phoneMem?.errors?.['maxlength']">
+                                The phone number cannot exceed 8 numbers*
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div>
+                        <button type="submit" (click)="onSubmit()">Next</button>
+                        <br>
+                        <span style="margin-left: 110px; color: white;">
+                            Already registered?
+                            <a style="color: white;" routerLink="/login">Login here.</a>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</body>

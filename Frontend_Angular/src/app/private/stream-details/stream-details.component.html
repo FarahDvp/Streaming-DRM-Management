@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manage Videos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+
+                <div class="left-column">
+
+                    <div id="videoContainer" #videoContainer>
+                        <video #videoPlayer id="videoPlayer" width="100%" height="100%">
+                        </video>
+                    </div>
+                </div>
+                <button (click)="download(video.reference)" class="btn btn-dark"><i
+                        class="fas fa-solid fa-download"></i>
+                    DOWNLOAD
+                </button>
+
+            </div>
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

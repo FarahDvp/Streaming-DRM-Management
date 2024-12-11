@@ -1,0 +1,125 @@
+ form {
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     padding: 40px 40px;
+     margin: 40px 40px;
+     margin-top: -5px;
+     background-color: rgb(231, 247, 247);
+ }
+
+ .form-grid {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+ }
+
+ .controls {
+     margin-top: -10px;
+ }
+
+
+ .video-card {
+     width: 40%;
+     border: 1px solid #ccc;
+     background-color: rgba(127, 255, 212, 0.23);
+ }
+
+ video {
+     width: 100%;
+     height: auto;
+ }
+
+ .title-card {
+     margin: 10px;
+     overflow: hidden;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .video-name {
+     flex-grow: 1;
+     margin-right: 10px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+
+ .title-card button {
+     float: right;
+     background-color: rgb(255, 115, 0);
+     margin-top: -11px;
+     margin-bottom: -10px;
+ }
+
+ .btn-x {
+     padding: 1rem 1rem;
+     font-size: 0.7rem;
+     line-height: 1;
+     border-radius: 1rem;
+     color: white;
+ }
+
+ .modal-dialog {
+     margin-top: 10%;
+ }
+
+
+
+
+ .container {
+     max-width: 900px;
+     margin: 0 auto;
+     padding: 20px;
+ }
+
+ .video-history {
+     list-style-type: none;
+     padding: 0;
+ }
+
+ .video-history-item {
+     margin-bottom: 20px;
+     border-bottom: 2px solid #ddd;
+     padding-bottom: 10px;
+ }
+
+ .video-info {
+     display: flex;
+     align-items: center;
+ }
+
+ .video-thumbnail {
+     width: 120px;
+     height: auto;
+     margin-right: 20px;
+ }
+
+ .video-title {
+     font-weight: bold;
+     margin: 0 5% 5%;
+ }
+
+ .video-meta {
+     color: #666;
+     margin-bottom: 5px;
+     margin: 0 5% 5%;
+ }
+
+ .time {
+     background-color: rgb(68, 134, 146);
+     padding: 1rem 1rem;
+     font-size: 1rem;
+     line-height: 1;
+     border-radius: 1rem;
+     color: white;
+     margin-bottom: 15px;
+ }
+
+
+ .delete-icon-link,
+ .delete-icon-link:focus,
+ .delete-icon-link:active,
+ .delete-icon-link:hover {
+     color: inherit;
+ }

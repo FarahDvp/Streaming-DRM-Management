@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <app-sidebar></app-sidebar>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">User details</h1>
+                </div>
+
+                <div class="row">
+                    <div class="container">
+                        <form [formGroup]="userForm" action="#" method="post" class="form-grid">
+                            <div class="left-column">
+                                <h6 for="name">Id User</h6>
+                                <div class="control-option">
+                                    <input type="text" name="uid" formControlName="uid" class="form-control" id="uid"
+                                        style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="username">Username</h6>
+                                <div class="control-option">
+                                    <input type="text" name="username" formControlName="username" class="form-control"
+                                        id="username" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="fullname">Fullname</h6>
+                                <div class="control-option">
+                                    <input type="text" name="fullname" formControlName="fullname" class="form-control"
+                                        id="fullname" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="email">Email</h6>
+                                <div class="control-option">
+                                    <input type="email" name="email" formControlName="email" class="form-control"
+                                        id="email" size="44" style="overflow: hidden;" class="input-group-text">
+                                </div>
+                            </div>
+
+
+
+                            <div class="right-column">
+                                <h6 for="password">Password</h6>
+                                <div class="control-option">
+                                    <input type="text" name="password" formControlName="password" class="form-control"
+                                        id="password" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="reference">Phone</h6>
+                                <div class="control-option">
+                                    <input type="number" name="phone" formControlName="phone" class="form-control"
+                                        id="phone" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="creationDate">Date of Creation</h6>
+                                <div class="control-option">
+                                    <input type="text" name="creationDate" formControlName="creationDate"
+                                        class="form-control" id="creationDate" style="width: 400px; overflow: hidden;"
+                                        class="input-group-text">
+                                </div>
+
+                                <br>
+                                <h6 for="role">Rôle</h6>
+                                <div class="control-option">
+                                    <select name="role" formControlName="role" class="form-control" id="role"
+                                        class="input-group-text" style="width: 400px;">
+                                        <option value="USER">User</option>
+                                        <option value="ADMIN">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

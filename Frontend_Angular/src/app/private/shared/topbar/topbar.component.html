@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input disabled type="text" class="form-control bg-light border-0 small"
+                placeholder="🎉 Enjoying VidSecure ? let us know how we're doing." aria-label="Search"
+                aria-describedby="basic-addon2">
+
+        </div>
+    </form>
+
+
+    <ul style="margin-top: 3%;" class="navbar-nav ml-auto">
+
+        <li *ngIf="isUser" class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+
+                <span *ngIf="notification" class="badge badge-danger badge-counter">1+</span>
+            </a>
+
+            <div *ngIf="notification || payment_notification"
+                class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                    Alerts Center
+                </h6>
+                <a *ngIf="notification" class="dropdown-item d-flex align-items-center" routerLink="/stream"
+                    (click)="clicked = !clicked">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-warning">
+                            <i class="fas fa-video text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">{{ notification?.date | date: 'MMMM d, y' }}</div>
+                        <span [ngClass]="{'font-weight-bold': !clicked}">
+                            {{ notification?.message }}
+                        </span>
+                    </div>
+                </a>
+
+                <a *ngIf="payment_notification" class="dropdown-item d-flex align-items-center">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">{{ payment_notification?.date | date: 'MMMM d, y' }}</div>
+                        {{ payment_notification?.message }}
+                    </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+            </div>
+        </li>
+
+
+        <li *ngIf="isUser" class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-duotone fa-video fa-sm fa-fw mr-2"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" routerLink="/downloads">
+                    <i class="fas fa-download fa-sm fa-fw mr-2 text-success"></i>
+                    Downloads
+                    <div style="margin-left: 30px;margin-bottom: -10px;" class="small text-gray-800">{{ downloadsCount
+                        }} videos</div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/history">
+                    <i class="fas fa-history fa-sm fa-fw mr-2 text-warning"></i>
+                    History
+                </a>
+            </div>
+        </li>
+
+
+
+
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ currentUser.fullname }}</span>
+
+                <img class="img-profile rounded-circle" src="/assets/img/user1.png">
+                <div class="status-indicator bg-success"></div>
+
+                <!-- <i class="fas fa-duotone fa-user fa-sm fa-fw mr-2"></i> -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" routerLink="/profile">
+                    <i style="color: rgb(81, 204, 196);" class="fas fa-user fa-sm fa-fw mr-2"></i>
+                    Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/login">
+                    <i class="fas fa-sign-in-alt fa-sm fa-fw mr-2 text-danger"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+
+    </ul>
+
+</nav>

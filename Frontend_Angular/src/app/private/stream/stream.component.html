@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manage Videos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+
+                <form action="#" method="post">
+
+                    <div *ngIf="videosList.length === 0"
+                        class="alert alert-warning d-flex justify-content-center align-items-center vh-100">
+                        <div *ngIf="uploadProgress !== undefined">
+                            <div class="spinner"></div>
+                            <span>Please wait until all videos load...</span>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <div class="form-grid">
+
+                            <div *ngFor="let video of videosList; let i = index"
+                                [routerLink]="['/stream', video.reference]" class="col-md-3.9 video-card">
+                                <div>
+                                    <div id="videoContainer{{i}}" #videoContainer>
+                                        <video #videoPlayer id="videoPlayer{{i}}" width="100%" height="100%"></video>
+                                    </div>
+                                </div>
+                                <h6 class="title-card">{{ video.name }}<span class="badge">{{
+                                        video.views }} views</span></h6>
+                            </div>
+
+
+                        </div>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li *ngFor="let pg of taillePagination"
+                                    [ngClass]="{'page-item': true, 'active': pg === activePage}">
+                                    <a class="page-link" (click)="changePage(pg)">{{ pg + 1 }}</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

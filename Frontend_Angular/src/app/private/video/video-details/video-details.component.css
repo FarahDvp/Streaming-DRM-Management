@@ -1,0 +1,66 @@
+form {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 50px 50px;
+    margin-bottom: 10px;
+    background-color: rgb(231, 247, 247);
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+button {
+    height: 40px;
+}
+
+.form-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-column {
+    width: 50%;
+}
+
+.right-column {
+    width: 42%;
+}
+
+
+input[type="color"],
+input[type="text"],
+input[type="number"],
+select {
+    width: 40%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+p {
+    color: rgb(14, 93, 74);
+    margin-top: -10px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.control-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-dialog {
+    max-width: 450px;
+    margin-top: 15%;
+    margin-left: 42%;
+}

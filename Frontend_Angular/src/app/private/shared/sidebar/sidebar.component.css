@@ -1,0 +1,30 @@
+.sidebar { 
+    background-color: #020714;
+    
+ }
+ body{
+  margin-left: 227px;
+}
+ul{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+ul li {
+  max-width: 45%;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  filter: grayscale(100);
+}
+ul li:hover {
+  filter: none;
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  ul li {
+    max-width: 40%;
+  }
+}

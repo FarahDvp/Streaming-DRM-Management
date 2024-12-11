@@ -1,0 +1,127 @@
+version: '3.8'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - rabbitmq_go_net
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - db
+    networks:
+      - frontend_backend_network
+      - backend_db_network
+
+  frontend:
+    build: ./vidsecure-Angular
+    container_name: frontend
+    ports:
+      - 4200:4200
+    networks:
+      - frontend_backend_network
+
+  backend:
+    build:
+      context: ./vidsecure-Spring-Boot
+      dockerfile: ../vidsecure-Spring-Boot/Dockerfile
+    container_name: backend
+    ports:
+      - "8080:8080"
+    networks:
+      - frontend_backend_network
+      - backend_db_network
+    depends_on:
+      - db
+    environment:
+      - DB_SERVER=db
+      - POSTGRES_DB=vid-secure-db
+      - POSTGRES_USER=Farah
+      - POSTGRES_PASSWORD=14273780
+    volumes:
+      - ./vidsecure-Spring-Boot/migrations:/flyway/sql
+
+  db:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: Farah
+      POSTGRES_PASSWORD: 14273780
+      POSTGRES_DB: vid-secure-db
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - backend_db_network
+    command:
+      [
+        "postgres",
+        "-c",
+        "shared_preload_libraries=pg_stat_statements"
+      ]
+
+# Uncomment and configure the following sections if needed
+# keycloak:
+#   image: quay.io/keycloak/keycloak:25.0.0
+#   command: [ "start-dev", "--import-realm" ]
+#   restart: unless-stopped
+#   environment:
+#     KC_DB: postgres
+#     KC_DB_USERNAME: keycloak
+#     KC_DB_PASSWORD: password
+#     KC_DB_URL: "jdbc:postgresql://keycloak-db/keycloak"
+#     KC_METRICS_ENABLED: true
+#     KC_LOG_LEVEL: INFO
+#     KC_REALM_NAME: vidsecure-realm
+#     KEYCLOAK_ADMIN: admin
+#     KEYCLOAK_ADMIN_PASSWORD: admin
+#   volumes:
+#     - ./keycloak-realms/vidSecure-realm.json:/opt/keycloak/data/import/vidSecure-realm.json:ro
+#   ports:
+#     - 8089:8080
+#   depends_on:
+#     - keycloak-db
+#   networks:
+#     - frontend_backend_network
+#     - backend_db_network
+
+# keycloak-db:
+#   image: postgres:15.7-alpine
+#   restart: unless-stopped
+#   healthcheck:
+#     test: [ "CMD", "pg_isready", "-U", "keycloak" ]
+#   environment:
+#     POSTGRES_DB: keycloak
+#     POSTGRES_USER: keycloak
+#     POSTGRES_PASSWORD: password
+#   volumes:
+#     - type: tmpfs
+#       target: /var/lib/postgresql/data
+#   networks:
+#     - frontend_backend_network
+#     - backend_db_network
+
+networks:
+  frontend_backend_network:
+  backend_db_network:
+  rabbitmq_go_net:
+    driver: bridge
+
+volumes:
+  db_data:
+  grafana_data:

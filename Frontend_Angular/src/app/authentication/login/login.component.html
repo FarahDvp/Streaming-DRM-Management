@@ -1,0 +1,37 @@
+<body>
+
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        <div class="signin">
+            <form [formGroup]="formService.formGroupLogin">
+                <label style="margin-left: -10px;" for="chk" aria-hidden="true">Connexion</label>
+                <br>
+
+                <br>
+                <div style="margin-top: -50px;" class="form-group">
+                    <input type="text" formControlName="username" class="form-control" id="exampleInputUsername"
+                        aria-describedby="emailHelp" placeholder="Username" size="45">
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <input type="password" formControlName="password" class="form-control" id="exampleInputPassword"
+                        placeholder="******" size="45">
+
+                </div>
+
+                <button type="submit" (click)="onSubmit()">
+                    Login
+                </button>
+                <br>
+                <span style="color: white;"> Not yet registred ? <a style="color: white;" routerLink="/register">
+                        Register here.
+                    </a></span>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,69 @@
+<body *ngIf="isAdmin">
+    <ul class="navbar-nav h-100 bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i style="background-clip: text;color: transparent; background-image: linear-gradient(to top,rgb(34, 223, 211),rgba(58, 82, 170, 0.874),rgb(68, 216, 207));"
+                    class="fab fa-gg"></i>
+            </div>
+            <div style="font-size: bold;text-transform: none;color:rgba(47, 8, 175, 0.962);"
+                class="sidebar-brand-text mx-3">Vid</div><span
+                style="text-transform: none;font-size:bold; margin-left: -15px;color:rgb(92, 9, 147);">Secure</span>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/dashboard">
+                <i class="fas fa-chart-line fa-sm fa-fw mr-2"></i>
+                <span>Dashboard</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/config-videos">
+                <i class="fas fa-duotone fa-video fa-sm fa-fw mr-2"></i>
+                <span>Manage Videos</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/config-content-player">
+                <i class="fas fa-play fa-sm fa-fw mr-2"></i>
+                <span>Player</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+
+        <li class="nav-item active">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse" aria-expanded="true"
+                aria-controls="collapse">
+                <i class="fas fa-thin fa-bullseye fa-sm fa-fw mr-2"></i>
+                <span>Tracking</span>
+            </a>
+            <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded"><strong>
+                        <a class="collapse-item" routerLink="/tracking-views">Views</a>
+                        <a class="collapse-item" routerLink="/tracking-downloads">Downloads</a></strong>
+                </div>
+            </div>
+        </li>
+
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/users-list">
+                <i class="fas fa-users fa-sm fa-fw mr-2"></i>
+                <span>Users</span></a>
+        </li>
+        <hr style="margin-bottom: 95%;" class="sidebar-divider d-none d-md-block">
+
+        <i style="margin-left: 30%;color: rgb(237, 173, 255);" class="fas fa-caret-up"></i>
+        <i style="margin-left: 4%;color: rgb(39, 217, 226);" class="fas fa-play"></i>
+        <i style="margin-left: 50%; margin-top:-10%;color:rgb(237, 173, 255);" class="fas fa-play"></i>
+        <i style="margin-left: 66%;color: rgb(39, 217, 226);" class="fas fa-play"></i>
+        <i style="margin-left: 80%; margin-top:-10%;color:rgb(168, 91, 209);" class="fas fa-play"></i>
+        <i style="margin-left: 45%;color: rgba(45, 6, 144, 0.564);" class="fas fa-caret-right"></i>
+        <i style="margin-left: 36%; margin-top:-10%;color:rgb(168, 91, 209);" class="fas fa-play"></i>
+        <i style="margin-left: 10%;color: rgba(45, 6, 144, 0.564);" class="fas fa-play"></i>
+        <i style="margin-left: 70%; margin-top:-10%;color:rgb(34, 40, 223);" class="fas fa-play"></i>
+        <i style="margin-left: 77%;color: rgba(45, 6, 144, 0.564);" class="fas fa-play"></i>
+        <i style="margin-left: 20%; margin-top:-10%;color:blue;" class="fas fa-play"></i>
+        <i style="margin-left: 60%;color: rgb(237, 173, 255);" class="fas fa-play"></i>
+        <i style="margin-left: 17%;color: rgb(237, 173, 255);" class="fas fa-play"></i>
+        <i style="margin-left: 36%; margin-top:-10%;color:rgb(39, 217, 226);" class="fas fa-play"></i>
+    </ul>
+</body>

@@ -1,0 +1,101 @@
+form {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 40px 40px;
+    margin-bottom: 10px;
+    background-color: rgb(231, 247, 247);
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-column {
+    width: 50%;
+}
+
+.right-column {
+    width: 42%;
+}
+
+
+input[type="color"],
+input[type="text"],
+input[type="number"],
+select {
+    width: 40%;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+p {
+    color: rgb(14, 93, 74);
+    margin-top: 20px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.control-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.video-card {
+    width: 30%;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    background-color: rgba(127, 255, 212, 0.23);
+}
+
+.title-card {
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-name {
+    flex-grow: 1;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-card span {
+    float: right;
+    font-weight: bold;
+    background-color: rgb(255, 115, 0);
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #7983ff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

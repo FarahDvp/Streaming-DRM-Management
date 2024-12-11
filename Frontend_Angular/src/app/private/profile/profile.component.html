@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <app-sidebar></app-sidebar>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+                </div>
+                <div class="row">
+                    <div class="container">
+
+                        <form action="#" method="post" class="form-grid">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-md-12">
+                                    <div class="row z-depth-3">
+                                        <div style="height:20rem;background-color: rgba(12, 122, 141, 0.501);"
+                                            class="col-sm-4 rounded-left">
+                                            <div class="card-block text-center text-white">
+                                                <i class="fas fa-user-tie fa-7x mt-5"></i>
+                                                <h2 class="font-weight-bold mt-4">{{ currentUser.fullname }}</h2>
+                                                <p>{{ currentUser.role }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8 bg-white rounded-right">
+                                            <h3 class="mt-3 text-center">Informations</h3>
+                                            <hr class="bg-warning mt-0 w-25">
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Username</p>
+                                                    <h6 class=" text-muted">{{ currentUser.username }}</h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Email</p>
+                                                    <h6 class="text-muted">{{ currentUser.email }}</h6>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Phone</p>
+                                                    <h6 class="text-muted">{{ currentUser.phone }}
+                                                    </h6>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <p class="font-weight-bold">Last connexion</p>
+                                                    <h6 class="text-muted">{{ currentUser.lastLogin }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.left-column {
+    width: 70%;
+    margin: 12.5% auto 0;
+    margin-bottom: -15%;
+    position: relative;
+    transform: translateY(-30%);
+}
+
+button {
+    float: right;
+}
+
+button i {
+    margin-right: 20px;
+}

@@ -1,0 +1,36 @@
+Plugins:
+Bundled analyzers:
+  - Python Code Quality and Security 4.7.0.12181 (python)
+  - Clean as You Code 2.1.0.500 (cayc)
+  - Go Code Quality and Security 1.14.0.4481 (go)
+  - JaCoCo 1.3.0.1538 (jacoco)
+  - Kotlin Code Quality and Security 2.17.0.2902 (kotlin)
+  - IaC Code Quality and Security 1.20.0.5654 (iac)
+  - JavaScript/TypeScript/CSS Code Quality and Security 10.5.1.22382 (javascript)
+  - Ruby Code Quality and Security 1.14.0.4481 (ruby)
+  - Scala Code Quality and Security 1.14.0.4481 (sonarscala)
+  - C# Code Quality and Security 9.8.0.76515 (csharp)
+  - Java Code Quality and Security 7.24.0.32100 (java)
+  - HTML Code Quality and Security 3.9.0.3600 (web)
+  - Flex Code Quality and Security 2.10.0.3458 (flex)
+  - XML Code Quality and Security 2.10.0.4108 (xml)
+  - PHP Code Quality and Security 3.32.0.10180 (php)
+  - Text Code Quality and Security 2.3.0.1632 (text)
+  - VB.NET Code Quality and Security 9.8.0.76515 (vbnet)
+  - Configuration detection for Code Quality and Security 1.3.0.654 (config)
+Global server settings:
+  - sonar.core.id=4F9E4638-AYvFkiDZI2vecyqUXx7q
+  - sonar.core.startTime=2024-05-05T20:53:23+0100
+  - sonar.forceAuthentication=true
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=http://localhost:9000
+  - sonar.projectBaseDir=C:\Users\farah\Desktop\vidsecure
+  - sonar.projectKey=vidSecure-backend
+  - sonar.scanner.app=ScannerCLI
+  - sonar.scanner.appVersion=5.0.1.3006
+  - sonar.sourceEncoding=windows-1252
+  - sonar.sources=.
+  - sonar.token=******
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\farah\Desktop\vidsecure\.scannerwork

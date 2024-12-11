@@ -1,0 +1,46 @@
+form {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+    background-color: rgb(231, 247, 247);
+}
+
+.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+.btn-xss {
+    padding: 0.60rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    margin-top: -0.1px;
+    background-color: rgb(10, 208, 198);
+    color: white;
+}
+
+.btn-x {
+    padding: 0.50rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    background-color: rgb(224, 149, 10);
+    color: white;
+}
+
+.modal-dialog {
+    margin-top: 10%;
+}
+
+td {
+    color: rgb(80, 7, 148);
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: rgb(19, 19, 186);
+}

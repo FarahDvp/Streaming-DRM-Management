@@ -1,0 +1,27 @@
+form {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 50px 80px;
+    margin-bottom: 10px;
+    background-color: rgb(231, 247, 247);
+}
+
+.form-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-column {
+    width: 50%;
+}
+
+.right-column {
+    width: 42%;
+}
+
+.control-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

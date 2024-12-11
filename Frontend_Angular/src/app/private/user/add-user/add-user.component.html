@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <app-sidebar></app-sidebar>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <app-topbar></app-topbar>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Add User</h1>
+                </div>
+
+                <div class="row">
+                    <div class="container">
+                        <form [formGroup]="userForm" action="#" method="post" class="form-grid">
+                            <div class="left-column">
+                                <h6 for="username">Username <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <input type="text" name="username" formControlName="username" class="form-control"
+                                        id="username" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+                                <div *ngIf="username?.touched && username?.invalid" class="text-danger">
+                                    <div *ngIf="username?.errors && 'required' in username.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                    <div *ngIf="username?.errors && 'unique' in username.errors">
+                                        <small>* The field must be unique</small>
+                                    </div>
+                                </div>
+
+
+
+                                <br>
+                                <h6 for="email">Email <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <input type="email" name="email" formControlName="email" class="form-control"
+                                        id="email" size="44" style="overflow: hidden;" class="input-group-text">
+                                </div>
+                                <div *ngIf="email?.touched && email?.invalid" class="text-danger">
+                                    <div *ngIf="email?.errors && 'required' in email.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                    <div *ngIf="email?.errors && 'email' in email.errors">
+                                        <small>* Invalid field, it must have the email format.</small>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <h6 for="password">Password <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <input type="text" name="password" formControlName="password" class="form-control"
+                                        id="password" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+                                <div *ngIf="password?.touched && password?.invalid" class="text-danger">
+                                    <div *ngIf="password?.errors && 'required' in password.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="right-column">
+                                <h6 for="fullname">Fullname <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <input type="text" name="fullname" formControlName="fullname" class="form-control"
+                                        id="fullname" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+                                <div *ngIf="fullname?.touched && fullname?.invalid" class="text-danger">
+                                    <div *ngIf="fullname?.errors && 'required' in fullname.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <h6 for="reference">Phone <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <input type="number" name="phone" formControlName="phone" class="form-control"
+                                        id="phone" style="width: 400px; overflow: hidden;" class="input-group-text">
+                                </div>
+                                <div *ngIf="phone?.touched && phone?.invalid" class="text-danger">
+                                    <div *ngIf="phone?.errors && 'required' in phone.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <h6 for="role">Rôle <span style="color: red;">*</span></h6>
+                                <div class="control-option">
+                                    <select name="role" formControlName="role" class="form-control" id="role"
+                                        class="input-group-text" style="width: 400px;">
+                                        <option value="USER">User</option>
+                                        <option value="ADMIN">Admin</option>
+                                    </select>
+                                </div>
+                                <div *ngIf="role?.touched && role?.invalid" class="text-danger">
+                                    <div *ngIf="role?.errors && 'required' in role.errors">
+                                        <small>* Required field</small>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <button style="margin-top: 50px;width: 200px;" (click)="addUser()"
+                                class="btn btn-success">Save</button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <footer style="color: grey;" class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; <span style="font-weight: bold;">VidSecure</span></span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

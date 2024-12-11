@@ -1,0 +1,76 @@
+<body>
+
+    <div class="main">
+
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+
+            <form class="user">
+                <label>Register</label>
+
+                <h6>STEP 2 OF 2</h6>
+                <h4>Set up your credit or debit card</h4>
+                <br>
+                <div>
+                    <img src="/assets/img/payment.png" width="30%" height="auto">
+                </div>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input name="card_number" class="form-control" id="card_number" type="number"
+                                style="width: 390px;" class="fai" placeholder="Card number" required />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input name="expiration_date" class="form-control" id="expiration_date" type="date"
+                                size="23" class="fai" placeholder="Expiration date" required />
+                        </div>
+
+                        <div class="pp">
+                            <input name="cvv" class="form-control" id="cvv" type="number" style="width: 215px;"
+                                class="fais" placeholder="CVV" required />
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="mb-3 mb-sm-0">
+                        <div class="pp">
+                            <input name="card_name" class="form-control" id="card_name" type="password" size="53"
+                                class="fai" placeholder="Name on card" required />
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="mb-3 mb-sm-0 d-flex align-items-center">
+                    <input type="checkbox" class="form-check-input" id="notificationCheckbox"
+                        formControlName="notificationPreferences" checked>
+                    <span>Receive notifications</span>
+                </div>
+
+
+                <br>
+                <div>
+                    <div>
+                        <button type="submit" routerLink="/login">Save</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</body>
