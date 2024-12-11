@@ -1,7 +1,7 @@
 # Streaming-DRM-Management
 A streaming DRM management app that secures video content and enhances user experience. It features DRM solutions, optimized video viewing and download, a notification system, user interaction tracking.
 
-## Key Features:
+## Key Features
 
 - Advanced DRM Management: Implementation of digital rights management solutions to protect streaming videos and control access.
 - Optimized Video Features: Enhanced video viewing and download capabilities, offering a smooth and responsive user experience.
