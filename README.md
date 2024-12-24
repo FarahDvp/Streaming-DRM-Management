@@ -3,7 +3,7 @@ A streaming DRM management app that secures video content and enhances user expe
 
 ## Key Features:
 
-- Advanced DRM Management: Implementation of digital rights management solutions to protect streaming videos and control access
+- Advanced DRM Management: Implementation of digital rights management solutions to protect streaming videos and control access.
 - Optimized Video Features: Enhanced video viewing and download capabilities, offering a smooth and responsive user experience.
 - Notification System: A notification system to inform users of important events or content updates.
 - Statistics Tracking: Detailed tracking of user interactions with content, enabling in-depth analysis of behavior and engagement.
